@@ -76,6 +76,7 @@ function drawLetter(posx, posy, letterData) {
   ellipse(pos2x, pos2y, size2, size2);
 }
 
+
 function keyTyped() {
   if (key == '!') {
     saveBlocksImages();
