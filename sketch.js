@@ -14,38 +14,38 @@ const canvasHeight = 500;
 
 const letterA = {
   "size": 100,
-  "size2": 100,
-  "spin1": 25,
-  "spin2": -25,
-  "spin3": 10,
-  "spin4": -10,
-  "bandUp": 70,
-  "bandAcross": 0
+  "size2": 60,
+  "spin1": 180,
+  "spin2": 90,
+  "spin3": 85,
+  "spin4": 95,
+  "bandUp": 10,
+  "bandAcross": -50
 }
 
 const letterB = {
   "size": 100,
-  "size2": 60,
+  "size2": 100,
   "spin1": 180,
-  "spin2": 270,
+  "spin2": 0,
   "spin3": 0,
-  "spin4": 90,
-  "bandUp": 20,
-  "bandAcross": 10
+  "spin4": 180,
+  "bandUp": 70,
+  "bandAcross": 20
 }
 
 const letterC = {
   "size": 100,
   "size2": 100,
-  "spin1": 220,
-  "spin2": 320,
-  "spin3": 45,
-  "spin4": -45,
-  "bandUp": 0,
-  "bandAcross": 0
+  "spin1": 0,
+  "spin2": 270,
+  "spin3": 0,
+  "spin4": 0,
+  "bandUp": 40,
+  "bandAcross": 40
 }
 
-const backgroundColor  = 0;
+const backgroundColor  = "#30dfc4";
 
 const darkGreen  = "#26b29d";
 const lightGreen  = "#30dfc4";
