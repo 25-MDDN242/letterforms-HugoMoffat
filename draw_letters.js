@@ -16,20 +16,43 @@ const strokeColor  = "#0a2d27";
  * from (0,0) to (100, 200)
  */
 function drawLetter(letterData) {
-  // color/stroke setup
-  stroke(strokeColor);
-  strokeWeight(4);
+  angleMode(DEGREES)
+  let sizer1 = letterData["size"];
+  let sizer2 = letterData["size2"];
+  let spinner1 = letterData["spin1"];
+  let spinner2 = letterData["spin2"];
+  let spinner3 = letterData["spin3"];
+  let spinner4 = letterData["spin4"];
+  let bandierUp1 = letterData["bandUp1"];
+  let bandierUp2 = letterData["bandUp2"];
+  let bandierAcross1 = letterData["bandAcross1"];
+  let bandierAcross2 = letterData["bandAcross2"];
 
-  // determine parameters for second circle
-  let size2 = letterData["size"];
-  let pos2x = 50  + letterData["offsetx"];
-  let pos2y = 150 + letterData["offsety"];
+  noStroke()
 
-  // draw two circles
-  fill(darkGreen);
-  ellipse(50, 150, 75, 75);
-  fill(lightGreen);
-  ellipse(pos2x, pos2y, size2, size2);
+  fill(255)
+  
+  push()
+  rotate(spinner1)
+  rect(-25, 0, 50, sizer1)
+  pop()
+
+  push()
+  rotate(spinner2)
+  rect(-25, 0, 50, sizer2)
+  pop()
+
+  fill(0)
+
+  push()
+  rotate(spinner3)
+  rect(bandierAcross1-25, bandierUp1-5, 50, 10)
+  pop()
+
+  push()
+  rotate(spinner4)
+  rect(bandierAcross2-25, bandierUp2-5, 50, 10)
+  pop()
 }
 
 function interpolate_letter(percent, oldObj, newObj) {
