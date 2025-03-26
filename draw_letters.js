@@ -33,6 +33,9 @@ function drawLetter(letterData) {
   fill(255)
   
   push()
+  translate(50, 100)
+
+  push()
   rotate(spinner1)
   rect(-25, 0, 50, sizer1)
   pop()
@@ -53,6 +56,8 @@ function drawLetter(letterData) {
   rotate(spinner4)
   rect(bandierAcross2-25, bandierUp2-5, 50, 10)
   pop()
+
+  pop()
 }
 
 function interpolate_letter(percent, oldObj, newObj) {
@@ -65,6 +70,6 @@ function interpolate_letter(percent, oldObj, newObj) {
 
 var swapWords = [
   "ABBAABBA",
-  "CAB?CAB?",
+  "DEFDEFDE",
   "BAAAAAAA"
 ]
