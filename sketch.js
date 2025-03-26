@@ -14,13 +14,15 @@ const canvasHeight = 500;
 
 const letterA = {
   "size": 100,
-  "size2": 60,
-  "spin1": 180,
-  "spin2": 90,
-  "spin3": 85,
-  "spin4": 95,
-  "bandUp": 10,
-  "bandAcross": -50
+  "size2": 100,
+  "spin1": 45,
+  "spin2": -45,
+  "spin3": 0,
+  "spin4": 0,
+  "bandUp1": 50,
+  "bandUp2": 50,
+  "bandAcross1": 10,
+  "bandAcross2": -10,
 }
 
 const letterB = {
@@ -28,21 +30,25 @@ const letterB = {
   "size2": 100,
   "spin1": 180,
   "spin2": 0,
-  "spin3": 0,
-  "spin4": 180,
-  "bandUp": 70,
-  "bandAcross": 20
+  "spin3": 90,
+  "spin4": 90,
+  "bandUp1": -10,
+  "bandUp2": -10,
+  "bandAcross1": 50,
+  "bandAcross2": -50,
 }
 
 const letterC = {
   "size": 100,
   "size2": 100,
-  "spin1": 0,
-  "spin2": 270,
-  "spin3": 0,
-  "spin4": 0,
-  "bandUp": 40,
-  "bandAcross": 40
+  "spin1": 180+45,
+  "spin2": 270+45,
+  "spin3": 45,
+  "spin4": -45,
+  "bandUp1": 0,
+  "bandUp2": 0,
+  "bandAcross1": 0,
+  "bandAcross2": 0,
 }
 
 const backgroundColor  = "#30dfc4";
@@ -99,8 +105,10 @@ function drawLetter(posx, posy, letterData) {
   let spinner2 = letterData["spin2"];
   let spinner3 = letterData["spin3"];
   let spinner4 = letterData["spin4"];
-  let bandierUp = letterData["bandUp"];
-  let bandierAcross = letterData["bandAcross"];
+  let bandierUp1 = letterData["bandUp1"];
+  let bandierUp2 = letterData["bandUp2"];
+  let bandierAcross1 = letterData["bandAcross1"];
+  let bandierAcross2 = letterData["bandAcross2"];
 
   push()
   rotate(spinner1)
@@ -116,12 +124,12 @@ function drawLetter(posx, posy, letterData) {
 
   push()
   rotate(spinner3)
-  rect(bandierAcross-25, bandierUp-5, 50, 10)
+  rect(bandierAcross1-25, bandierUp1-5, 50, 10)
   pop()
 
   push()
   rotate(spinner4)
-  rect(bandierAcross-25, bandierUp-5, 50, 10)
+  rect(bandierAcross2-25, bandierUp2-5, 50, 10)
   pop()
 
 }
