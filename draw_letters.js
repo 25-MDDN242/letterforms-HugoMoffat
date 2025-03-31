@@ -17,16 +17,18 @@ const strokeColor  = "#0a2d27";
  */
 function drawLetter(letterData) {
   angleMode(DEGREES)
-  let sizer1 = letterData["size"];
-  let sizer2 = letterData["size2"];
+  let sizer1 = letterData["height1"];
+  let sizer2 = letterData["height2"];
+  let wide = letterData["width"]
   let spinner1 = letterData["spin1"];
   let spinner2 = letterData["spin2"];
   let spinner3 = letterData["spin3"];
   let spinner4 = letterData["spin4"];
-  let bandierUp1 = letterData["bandUp1"];
-  let bandierUp2 = letterData["bandUp2"];
-  let bandierAcross1 = letterData["bandAcross1"];
-  let bandierAcross2 = letterData["bandAcross2"];
+  let bandierUp1 = letterData["handleUp1"];
+  let bandierUp2 = letterData["handleUp2"];
+  let bandierAcross1 = letterData["handleAcross1"];
+  let bandierAcross2 = letterData["handleAcross2"];
+  let bandierWidth = letterData["handleWidth"]
 
   noStroke()
 
@@ -37,24 +39,24 @@ function drawLetter(letterData) {
 
   push()
   rotate(spinner1)
-  rect(-25, 0, 50, sizer1)
+  rect(-25, 0, wide, sizer1)
   pop()
 
   push()
   rotate(spinner2)
-  rect(-25, 0, 50, sizer2)
+  rect(-25, 0, wide, sizer2)
   pop()
 
   fill(0)
 
   push()
   rotate(spinner3)
-  rect(bandierAcross1-25, bandierUp1-5, 50, 10)
+  rect(bandierAcross1-25, bandierUp1-5, bandierWidth, 10)
   pop()
 
   push()
   rotate(spinner4)
-  rect(bandierAcross2-25, bandierUp2-5, 50, 10)
+  rect(bandierAcross2-25, bandierUp2-5, bandierWidth, 10)
   pop()
 
   pop()
