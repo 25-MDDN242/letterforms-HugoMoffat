@@ -17,9 +17,8 @@ const strokeColor  = "#0a2d27";
  */
 function drawLetter(letterData) {
   angleMode(DEGREES)
-  let sizer1 = letterData["height1"];
-  let sizer2 = letterData["height2"];
-  let wide = letterData["width"]
+  let sizer1 = letterData["handleDepth1"];
+  let sizer2 = letterData["handleDepth2"]; 
   let spinner1 = letterData["spin1"];
   let spinner2 = letterData["spin2"];
   let spinner3 = letterData["spin3"];
@@ -28,8 +27,8 @@ function drawLetter(letterData) {
   let bandierUp2 = letterData["handleUp2"];
   let bandierAcross1 = letterData["handleAcross1"];
   let bandierAcross2 = letterData["handleAcross2"];
-  let bandierWidth = letterData["handleWidth"]
-
+  let bandierWide1 = letterData["handleWidth1"];
+  let bandierWide2 = letterData["handleWidth2"];
   noStroke()
 
   fill(255)
@@ -39,24 +38,24 @@ function drawLetter(letterData) {
 
   push()
   rotate(spinner1)
-  rect(-25, 0, wide, sizer1)
+  rect(-25, 0, 50, 100)
   pop()
 
   push()
   rotate(spinner2)
-  rect(-25, 0, wide, sizer2)
+  rect(-25, 0, 50, 100)
   pop()
 
   fill(0)
 
   push()
   rotate(spinner3)
-  rect(bandierAcross1-25, bandierUp1-5, bandierWidth, 10)
+  rect(bandierAcross1-25, bandierUp1-5, bandierWide1, sizer1)
   pop()
 
   push()
   rotate(spinner4)
-  rect(bandierAcross2-25, bandierUp2-5, bandierWidth, 10)
+  rect(bandierAcross2-25, bandierUp2-5, bandierWide2, sizer2)
   pop()
 
   pop()
@@ -64,14 +63,25 @@ function drawLetter(letterData) {
 
 function interpolate_letter(percent, oldObj, newObj) {
   let new_letter = {};
-  new_letter["size"]    = map(percent, 0, 100, oldObj["size"], newObj["size"]);
-  new_letter["offsetx"] = map(percent, 0, 100, oldObj["offsetx"], newObj["offsetx"]);
-  new_letter["offsety"] = map(percent, 0, 100, oldObj["offsety"], newObj["offsety"]);
+  new_letter["spin1"] = map(percent, 0, 100, oldObj["spin1"], newObj["spin1"]);
+  new_letter['spin2'] = map(percent, 0, 100, oldObj["spin2"], newObj["spin2"]);
+  new_letter['spin3'] = map(percent, 0, 100, oldObj["spin3"], newObj["spin3"]);
+  new_letter['spin4'] = map(percent, 0, 100, oldObj["spin4"], newObj["spin4"]);
+  new_letter['handleUp1'] = map(percent, 0, 100, oldObj["handleUp1"], newObj["handleUp1"]);
+  new_letter['handleUp2'] = map(percent, 0, 100, oldObj["handleUp2"], newObj["handleUp2"]);
+  new_letter["handleAcross1"] = map(percent, 0, 100, oldObj["handleAcross1"], newObj["handleAcross1"]);
+  new_letter["handleAcross2"] = map(percent, 0, 100, oldObj["handleAcross2"], newObj["handleAcross2"]);
+  new_letter['handleWidth1'] = map(percent, 0, 100, oldObj["handleWidth1"], newObj["handleWidth1"]);
+  new_letter['handleWidth2'] = map(percent, 0, 100, oldObj["handleWidth2"], newObj["handleWidth2"]);
+  new_letter['handleDepth1'] = map(percent, 0, 100, oldObj["handleDepth1"], newObj["handleDepth1"]);
+  new_letter['handleDepth2'] = map(percent, 0, 100, oldObj["handleDepth2"], newObj["handleDepth2"]);
   return new_letter;
 }
 
 var swapWords = [
-  "ABBAABBA",
-  "DEFDEFDE",
-  "BAAAAAAA"
+  "ABCDEFGH",
+  "IJKLMNOP",
+  "QRSTUVWX",
+  "YZ012345",
+  "6789"
 ]
