@@ -388,7 +388,7 @@ const alphabet = {
   "handleAcross2": 20,
   "handleWidth1": 0,
   "handleWidth2": 10,
-  "handleDepth1": 180,
+  "handleDepth1": 0,
   "handleDepth2": 200,
   },
   "1": {

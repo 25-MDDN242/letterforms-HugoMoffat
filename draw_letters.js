@@ -1,5 +1,5 @@
 /* these are optional special variables which will change the system */
-var systemBackgroundColor = "#acf2e7";
+var systemBackgroundColor = "#2a3069";
 var systemLineColor = "#000090";
 var systemBoxColor = "#C73869";
 
@@ -47,7 +47,8 @@ function drawLetter(letterData) {
   pop()
 
   fill(0)
-
+  strokeWeight(2)
+  stroke(0)
   push()
   rotate(spinner3)
   rect(bandierAcross1-25, bandierUp1-5, bandierWide1, sizer1)
