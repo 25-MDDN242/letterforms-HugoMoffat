@@ -4,10 +4,8 @@
 
 (Replace this README with information about your alphabet. This is an example.)
 
-rotating blocks with additional black bands
+ - ReFRIGID
 
-The 8 parameters per letter:
-  * `size1 and size2` : for the length of the white block
-  * `spin1 and spin2` : rotate the white blocks
-  * `spin3 and spin4` : rotate the black bands
-  * `bandUp and bandAcross` : move the black bands
+ - Hugo Moffat
+
+ - design process -
