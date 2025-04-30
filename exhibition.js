@@ -36,14 +36,14 @@ let secondsPerWord = 8;
 let curSwapWord = 0;
 
 var defaultSwapWords = [
-  "ACTUALLY",
-  "1234567?",
-  "EXPECTED",
-  "PROPERTY",
-  "ADDITION",
-  "FOLLOWED",
-  "PROVIDED",
-  "ALTHOUGH",
+  "CHILLING",
+  "SUB-ZERO",
+  "COLDRIME",
+  "ICECREAM",
+  "PRPRPRPR",
+  "RPRPRPRP",
+  "WINTERED",
+  "VERGLACE",
   "HAPPENED",
   "QUESTION",
   "AMERICAN",

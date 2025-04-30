@@ -9,12 +9,12 @@ const sliderInfo = [
   ["size2", 0, 100],
   ["spin1", 0, 360]
   ["spin2", 0, 360]
-  ["spin3", 0, 360]
-  ["spin4", 0, 360]
-  ["bandUp1", -100, 100]
-  ["bandUp2", -100, 100]
-  ["bandAcross1", -50, 50]
-  ["bandAcross2", -50, 50]
+  //["spin3", 0, 360]
+  //["spin4", 0, 360]
+  //["bandUp1", -100, 100]
+  //["bandUp2", -100, 100]
+  //["bandAcross1", -50, 50]
+  //["bandAcross2", -50, 50]
 ];
 
 // PROBABLY DON'T NEED TO EDIT ANYTHING ELSE. STOP HERE.

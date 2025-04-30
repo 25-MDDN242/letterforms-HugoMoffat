@@ -2,10 +2,14 @@
 [![Open in Visual Studio Code](https://classroom.github.com/assets/open-in-vscode-2e0aaae1b6195c2367325f4f02e2d04e9abb55f0b24a779b69b11b9e10269abc.svg)](https://classroom.github.com/online_ide?assignment_repo_id=18842565&assignment_repo_type=AssignmentRepo)
 ## MDDN 242 2025 Assignment 2
 
-(Replace this README with information about your alphabet. This is an example.)
+ - ReFRIGID -
 
- - ReFRIGID
+ - Hugo Moffat -
 
- - Hugo Moffat
+ - design -
+ 
+ Themed after household whiteware such as refrigeraters, ReFRIGID uses rotation and scale in an art deco style to convey numbers and letters sleek and minimally.
 
- - design process -
+ On top of the white base, two black rects are drawn with varying rotation and scale to make an upper case letter.
+
+ Initially the white base rotated as well, as two rects around the centre. This made for some outlandish and abstract letters, but those letters massively exceeded the bounding box causing the type face to be unreadable due to overlap between letters.
