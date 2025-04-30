@@ -13,24 +13,45 @@ const canvasHeight = 500;
  */
 
 const letterA = {
-  "size": 80,
-  "offsetx": 0,
-  "offsety": 35
+  "size": 100,
+  "size2": 100,
+  "spin1": 45,
+  "spin2": -45,
+  "spin3": 0,
+  "spin4": 0,
+  "bandUp1": 50,
+  "bandUp2": 50,
+  "bandAcross1": 10,
+  "bandAcross2": -10,
 }
 
 const letterB = {
-  "size": 150,
-  "offsetx": 0,
-  "offsety": -145
+  "size": 100,
+  "size2": 100,
+  "spin1": 180,
+  "spin2": 0,
+  "spin3": 90,
+  "spin4": 90,
+  "bandUp1": -10,
+  "bandUp2": -10,
+  "bandAcross1": 50,
+  "bandAcross2": -50,
 }
 
 const letterC = {
   "size": 100,
-  "offsetx": 30,
-  "offsety": 0
+  "size2": 100,
+  "spin1": 180+45,
+  "spin2": 270+45,
+  "spin3": 45,
+  "spin4": -45,
+  "bandUp1": 0,
+  "bandUp2": 0,
+  "bandAcross1": 0,
+  "bandAcross2": 0,
 }
 
-const backgroundColor  = "#acf2e7";
+const backgroundColor  = "#30dfc4";
 
 const darkGreen  = "#26b29d";
 const lightGreen  = "#30dfc4";
@@ -42,8 +63,9 @@ function setup () {
   main_canvas.parent('canvasContainer');
 
   // color/stroke setup
-  stroke(strokeColor);
-  strokeWeight(4);
+  //stroke(strokeColor);
+  //strokeWeight(4);
+  noStroke()
 
   // with no animation, redrawing the screen is not necessary
   noLoop();
@@ -58,23 +80,60 @@ function draw () {
   let center_y = canvasHeight / 1.6;
 
   // draw the letters A, B, C from saved data
-  drawLetter(center_x - 250, center_y, letterA);
-  drawLetter(center_x      , center_y, letterB);
-  drawLetter(center_x + 250, center_y, letterC);
+  push()
+  translate(center_x - 250, center_y)
+  drawLetter(0, 0, letterA);
+  pop()
+
+  push()
+  translate(center_x      , center_y)
+  drawLetter(0, 0, letterB);
+  pop()
+
+  push()
+  translate(center_x + 250, center_y)
+  drawLetter(0, 0, letterC);
+  pop()
 }
 
 function drawLetter(posx, posy, letterData) {
   // determine parameters for second circle
-  let size2 = letterData["size"];
-  let pos2x = posx + letterData["offsetx"];
-  let pos2y = posy + letterData["offsety"];
+  angleMode(DEGREES)
+  let sizer1 = letterData["size"];
+  let sizer2 = letterData["size2"];
+  let spinner1 = letterData["spin1"];
+  let spinner2 = letterData["spin2"];
+  let spinner3 = letterData["spin3"];
+  let spinner4 = letterData["spin4"];
+  let bandierUp1 = letterData["bandUp1"];
+  let bandierUp2 = letterData["bandUp2"];
+  let bandierAcross1 = letterData["bandAcross1"];
+  let bandierAcross2 = letterData["bandAcross2"];
 
-  // draw two circles
-  fill(darkGreen);
-  ellipse(posx, posy, 150, 150);
-  fill(lightGreen);
-  ellipse(pos2x, pos2y, size2, size2);
+  push()
+  rotate(spinner1)
+  rect(-25, 0, 50, sizer1)
+  pop()
+
+  push()
+  rotate(spinner2)
+  rect(-25, 0, 50, sizer2)
+  pop()
+
+  fill(0)
+
+  push()
+  rotate(spinner3)
+  rect(bandierAcross1-25, bandierUp1-5, 50, 10)
+  pop()
+
+  push()
+  rotate(spinner4)
+  rect(bandierAcross2-25, bandierUp2-5, 50, 10)
+  pop()
+
 }
+
 
 function keyTyped() {
   if (key == '!') {
